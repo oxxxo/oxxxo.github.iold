@@ -15,20 +15,39 @@ z);r.on("mouseleave",z)}})}v(a.on,!0,!0)}};q.fn.toggles=function(c){return this.
 <link rel="stylesheet" href="https://raw.githubusercontent.com/simontabor/jquery-toggles/master/css/themes/toggles-modern.css"/>
 <link rel="stylesheet" href="https://raw.githubusercontent.com/simontabor/jquery-toggles/master/css/themes/toggles-all.css"/>
 <div class="example">
-  <h4>Custom Text</h4>
-  <div class="toggle" data-ontext="HI" data-offtext="BYE" style="height: 22px; width: 70px;">
-    <div class="toggle-slide"><div class="toggle-inner" style="width: 118px; margin-left: 0px;">
-      <div class="toggle-on active" style="height: 22px; width: 59px; text-indent: -7.33333px; line-height: 22px;">
-        HI
-      </div>
-      <div class="toggle-blob" style="height: 22px; width: 22px; margin-left: -11px;">
-      </div>
-      <div class="toggle-off" style="height: 22px; width: 59px; margin-left: -11px; text-indent: 7.33333px; line-height: 22px;">
-        BYE
-      </div>
-      </div>
-    </div>
-  </div>
-  
+<div class="toggle toggle-modern">
   <code class=" language-javascript">
     $<span class="token punctuation">(</span><span class="token string">'.toggle'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toggles<span class="token punctuation">(</span><span class="token punctuation">{</span>text<span class="token punctuation">:</span><span class="token punctuation">{</span>on<span class="token punctuation">:</span><span class="token string">'HI'</span><span class="token punctuation">,</span>off<span class="token punctuation">:</span><span class="token string">'BYE'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></div>
+<script>
+ // Simplest way:
+$('.toggle').toggles();
+
+
+// With options (defaults shown below)
+$('.toggle').toggles({
+  drag: true, // allow dragging the toggle between positions
+  click: true, // allow clicking on the toggle
+  text: {
+    on: 'ON', // text for the ON position
+    off: 'OFF' // and off
+  },
+  on: true, // is the toggle ON on init
+  animate: 250, // animation time (ms)
+  easing: 'swing', // animation transition easing function
+  checkbox: null, // the checkbox to toggle (for use in forms)
+  clicker: null, // element that can be clicked on to toggle. removes binding from the toggle itself (use nesting)
+  width: 50, // width used if not set in css
+  height: 20, // height if not set in css
+  type: 'compact' // if this is set to 'select' then the select style toggle will be used
+});
+
+
+// Getting notified of changes, and the new state:
+$('.toggle').on('toggle', function(e, active) {
+  if (active) {
+    console.log('Toggle is now ON!');
+  } else {
+    console.log('Toggle is now OFF!');
+  }
+});
+ </script>
