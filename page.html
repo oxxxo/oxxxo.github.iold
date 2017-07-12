@@ -1,17 +1,43 @@
 <iframe id="toggle" src="https://www.youtube.com/embed/YRNIndNHloU" frameborder="0" allowfullscreen></iframe>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>$(document).ready( function(){
-    $('#toggle-button').click( function() {
-        var toggleWidth = $("#toggle").width() == 100% ? "0%" : "100%";
-        $('#toggle').animate({ width: toggleWidth });
-    });
-});</script><style>
-#toggle{
-    height:200px;
-    width:0px;
-    background:red;
+<script>var button = document.getElementsByTagName( 'button' )[ 0 ],
+    div = document.getElementsByTagName( 'div' )[ 0 ];
+
+button.addEventListener( 'click', toggleVisibility );
+
+function toggleVisibility(){
+  if( 
+    div.classList.contains( 'show' ) 
+   ){
+    div.classList.remove( 'show' );
+    div.classList.add( 'hide' );
+  }
+  else {
+    div.classList.add( 'show' );
+    div.classList.remove( 'hide' );
+  }
+}</script><style>
+div {
+  height: 100px;
+  width: 100px;
+  background: #000;
+  transition: 1s;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }
 </style>
 
-<h1></h1>
+<p>A square</p>
+
+<div class="show"></div>
+
+<br>
+
+<button>click to toggle hide/show</button>
 <input id="toggle-button" type="button" value="Подругому"/>
