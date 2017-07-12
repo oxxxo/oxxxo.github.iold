@@ -1,43 +1,31 @@
-<iframe id="toggle" src="https://www.youtube.com/embed/YRNIndNHloU" frameborder="0" allowfullscreen></iframe>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>var button = document.getElementsByTagName( 'button' )[ 0 ],
-    div = document.getElementsByTagName( 'div' )[ 0 ];
 
-button.addEventListener( 'click', toggleVisibility );
+<script>var fadeDuration = 400;
 
-function toggleVisibility(){
-  if( 
-    div.classList.contains( 'show' ) 
-   ){
-    div.classList.remove( 'show' );
-    div.classList.add( 'hide' );
-  }
-  else {
-    div.classList.add( 'show' );
-    div.classList.remove( 'hide' );
-  }
-}</script><style>
-div {
-  height: 100px;
-  width: 100px;
-  background: #000;
-  transition: 1s;
+$('#fadeToggle').click( function(e) {
+    $('.circle').fadeToggle(fadeDuration);
+});</script>
+<style>.circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    position: relative;
 }
 
-.hide {
-  opacity: 0;
-}
+#circleContainer {
+    margin-top: 2em;
+}</style>
 
-.show {
-  opacity: 1;
-}
-</style>
 
-<p>A square</p>
 
-<div class="show"></div>
 
-<br>
 
-<button>click to toggle hide/show</button>
-<input id="toggle-button" type="button" value="Подругому"/>
+<span id="fadeToggle">Fade Toggle</span>
+
+<div id="circleContainer">
+    
+<iframe id="toggle" src="https://www.youtube.com/embed/YRNIndNHloU" frameborder="0" allowfullscreen></iframe>
+</div>
