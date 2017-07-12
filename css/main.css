@@ -353,3 +353,6 @@ footer p {
 ul.download-btn {
     font-size: 0px;
 }
+	::-webkit-scrollbar {
+    width: 0px;
+}
