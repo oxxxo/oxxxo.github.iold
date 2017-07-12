@@ -350,3 +350,6 @@ footer p {
   margin-top: 10px;
   margin-bottom: 0;
 }
+ul.download-btn {
+    font-size: 0px;
+}
