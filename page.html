@@ -1,1 +1,17 @@
 <iframe src="https://www.youtube.com/embed/YRNIndNHloU" frameborder="0" allowfullscreen></iframe>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>$(document).ready( function(){
+    $('#toggle-button').click( function() {
+        var toggleWidth = $("#toggle").width() == 800 ? "0px" : "800px";
+        $('#toggle').animate({ width: toggleWidth });
+    });
+});</script><style>
+#toggle{
+    height:200px;
+    width:0px;
+    background:red;
+}
+</style>
+<h1>Toggle Width with jQuery</h1>
+<input id="toggle-button" type="button" value="Click me!"/>
+<div id="toggle"></div>
